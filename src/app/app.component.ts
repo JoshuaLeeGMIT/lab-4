@@ -9,16 +9,13 @@ import { stringify } from 'querystring';
 export class AppComponent {
   title = 'data-binding';
   nclick: number = 0;
-  msg: string = "";
+  hidden: boolean = true;
 
   incr(): void {
     this.nclick++;
   }
 
   reveal(): void {
-    if (this.msg == "")
-      this.msg = "Look at the star";
-    else
-      this.msg = "";
+    this.hidden = !this.hidden;
   }
 }
